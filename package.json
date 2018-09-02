@@ -1,0 +1,27 @@
+{
+  "name": "r-app",
+  "version": "1.0.0",
+  "description": "Raspbery app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lepenr/r-app.git"
+  },
+  "keywords": [
+    "pi"
+  ],
+  "author": "lepenr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lepenr/r-app/issues"
+  },
+  "homepage": "https://github.com/lepenr/r-app#readme",
+  "dependencies": {
+    "ds18b20": "^0.1.0"
+  },
+  "devDependencies": {}
+}
