@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+
+	<title>Compass Starter by Ariona, Rian</title>
+
+	<!-- Loading third party fonts -->
+
+	<!-- Loading main css file -->
+
+	<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+
+	<style>
+	</style>
+
+</head>
+
+
+<body>
+
+	<div class="site-content">
+		<div class="site-header">
+			<div class="container">
+				<a href="index.html" class="branding">
+				</a>
+
+				<!-- Default snippet for navigation -->
+
+				<!-- .main-navigation -->
+
+				<div class="mobile-navigation"></div>
+
+			</div>
+		</div>
+		<!-- .site-header -->
+
+
+		<div class="forecast-table">
+			<div class="container">
+				<div class="forecast-container">
+					<div class="today forecast">
+						<div class="forecast-header">
+							<div class="day">Monday</div>
+							<div class="date">6 Oct</div>
+						</div>
+						<!-- .forecast-header -->
+						<div class="forecast-content">
+							<div class="location">Outside</div>
+							<div class="degree">
+								<div class="num">
+									<span id="message">n/a</span>
+									<sup>o</sup>C</div>
+								<div class="forecast-icon">
+								</div>
+							</div>
+						</div>
+						<div class="forecast-content">
+							<div class="location">Inside</div>
+							<div class="degree">
+								<div class="num">
+									<span id="message2">n/a</span>
+									<sup>o</sup>C</div>
+								<div class="forecast-icon">
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="/socket.io/socket.io.js "></script>
+	<script>
+		var socket = io();
+
+		var temp_broken = "n/a";
+		socket.on('message', function (msg) {
+			console.log(msg.msg);
+			console.log(msg.msg2);
+			if (msg.msg2 != "85") {
+				temp_broken = msg.msg2;
+			};
+
+			document.getElementById("message").innerHTML = msg.msg;
+			document.getElementById("message2").innerHTML = temp_broken;
+		});
+	</script>
+
+</body>
+
+</html>
