@@ -72,6 +72,16 @@
 								</div>
 							</div>
 						</div>
+<div class="forecast-content">
+                                                        <div class="location">Soil status</div>
+                                                        <div class="degree">
+                                                                <div class="num">
+                                                                        <span id="soil_status">n/a</span>
+                                                                        <sup></sup></div>
+                                                                <div class="forecast-icon">
+                                                                </div>
+                                                        </div>
+                                                </div>
 					</div>
 
 
@@ -92,9 +102,14 @@
 			if (msg.msg2 != "85") {
 				temp_broken = msg.msg2;
 			};
+function precise(x) {
+  return Number.parseFloat(x).toPrecision(5);
+}
 
-			document.getElementById("message").innerHTML = msg.msg;
-			document.getElementById("message2").innerHTML = temp_broken;
+			document.getElementById("message").innerHTML = precise(msg.msg);
+			document.getElementById("message2").innerHTML = precise(temp_broken);
+			document.getElementById("soil_status").innerHTML = msg.soil_output;
+
 		});
 	</script>
 

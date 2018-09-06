@@ -2485,6 +2485,7 @@ padding-bottom:100%;
 					<div class="today forecast">
 						<div class="forecast-header">
 							<div class="day">Monday</div>
+							<div class="day" id="soil_status">n/a</div>
 							<div class="date">6 Oct</div>
 						</div>
 						<!-- .forecast-header -->
@@ -2529,6 +2530,8 @@ padding-bottom:100%;
 
 			document.getElementById("message").innerHTML = msg.msg;
 			document.getElementById("message2").innerHTML = temp_broken;
+                        document.getElementById("soil_status").innerHTML = msg.soil_status;
+
 		});
 	</script>
 
